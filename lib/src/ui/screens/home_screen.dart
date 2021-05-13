@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   title: Text(
                     "Vs Computer",
-                    style: TextStyle(color: Colors.grey.shade100),
+                    style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
@@ -99,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   title: Text(
                     "Player vs Player",
-                    style: TextStyle(color: Colors.grey.shade100),
+                    style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
