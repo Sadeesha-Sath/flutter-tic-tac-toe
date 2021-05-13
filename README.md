@@ -1,4 +1,4 @@
-# tic_tac_toe
+# Tic Tac Toe
 
 A Simple Tic Tac Toe game built using Flutter and Dart.
 
@@ -7,5 +7,4 @@ A Simple Tic Tac Toe game built using Flutter and Dart.
 1. Computer opponent mode - Try to beat it. I challenge you 😎
 2. Player vs. Player mode - chalenge your friends and family.
 
-#### Tic Tac Toe Vectors by Vecteezy
 <a href="https://www.vecteezy.com/free-vector/tic-tac-toe">Tic Tac Toe Vectors by Vecteezy</a>
