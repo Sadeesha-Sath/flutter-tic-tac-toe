@@ -1,13 +1,20 @@
 import 'package:tic_tac_toe/src/extensions/list_extension.dart';
 
 // 0 for draw, 1 for user, 2 for com, -1 for not over
-int isGameOverPlayer(List<int> intList) {
-  var _playerValues = intList.allIndexWhere((element) => element == 1).toSet();
+int isGameOver(List<int> intList, int playerMark) {
+
+  var _playerMarkValues = intList.allIndexWhere((element) => element == playerMark);
   for (Set<int> winningSet in _winningSets) {
-    if (_playerValues.containsAll(winningSet)) {
-      return 1;
+    if (_playerMarkValues.containsAll(winningSet)) {
+      return playerMark;
     }
   }
+  // var _computerValues = intList.allIndexWhere((element) => element == 2);
+  // for (Set<int> winningSet in _winningSets) {
+  //   if (_computerValues.containsAll(winningSet)) {
+  //     return 2;
+  //   }
+  // }
   var _availableValues = intList.allIndexWhere((element) => element == 0);
   if (_availableValues.isEmpty) {
     return 0;
@@ -15,15 +22,15 @@ int isGameOverPlayer(List<int> intList) {
   return -1;
 }
 
-int isGameOverComputer(List<int> intList) {
-  var _computerValues = intList.allIndexWhere((element) => element == 2).toSet();
-  for (Set<int> winningSet in _winningSets) {
-    if (_computerValues.containsAll(winningSet)) {
-      return 2;
-    }
-  }
-  return -1;
-}
+// int isGameOverComputer(List<int> intList) {
+//   var _computerValues = intList.allIndexWhere((element) => element == 2);
+//   for (Set<int> winningSet in _winningSets) {
+//     if (_computerValues.containsAll(winningSet)) {
+//       return 2;
+//     }
+//   }
+//   return -1;
+// }
 
 Set<Set<int>> _winningSets = {
   {0, 4, 8},

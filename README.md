@@ -1,16 +1,11 @@
 # tic_tac_toe
 
-A new Flutter project.
+A Simple Tic Tac Toe game built using Flutter and Dart.
 
-## Getting Started
+## Main Features
 
-This project is a starting point for a Flutter application.
+1. Computer opponent mode - Try to beat it. I challenge you 😎
+2. Player vs. Player mode - chalenge your friends and family.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Tic Tac Toe Vectors by Vecteezy
+<a href="https://www.vecteezy.com/free-vector/tic-tac-toe">Tic Tac Toe Vectors by Vecteezy</a>
