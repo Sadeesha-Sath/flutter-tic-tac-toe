@@ -6,6 +6,7 @@ import 'package:tic_tac_toe/src/providers/theme_changer.dart';
 import 'package:tic_tac_toe/src/providers/with_computer.dart';
 import 'package:tic_tac_toe/src/ui/screens/game_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:tic_tac_toe/src/ui/widgets/custom_button.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -40,69 +41,35 @@ class HomeScreen extends StatelessWidget {
                         : "assets/icon_dark.png"),
                   )),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 20),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<IsDisabled>().toggleDisabled(false);
-                  context.read<IntList>().initializeList(9);
-                  context.read<WithComputer>().changeValue(true);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => GameScreen(),
-                    ),
-                  );
-                },
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            CustomButton(
+              icon: Icons.computer,
+              text: "Vs Computer",
+              onPressed: () {
+                context.read<IsDisabled>().toggleDisabled(false);
+                context.read<IntList>().initializeList(9);
+                context.read<WithComputer>().changeValue(true);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(),
                   ),
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: ListTile(
-                  leading: Icon(
-                    Icons.computer,
-                    color: Colors.grey.shade100,
-                  ),
-                  title: Text(
-                    "Vs Computer",
-                    style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
+                );
+              },
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 20),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            CustomButton(
+              text: "Player vs Player",
+              icon: Icons.people_rounded,
+              onPressed: () {
+                context.read<IsDisabled>().toggleDisabled(false);
+                context.read<IntList>().initializeList(9);
+                context.read<WithComputer>().changeValue(false);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(),
                   ),
-                ),
-                clipBehavior: Clip.antiAlias,
-                onPressed: () {
-                  context.read<IsDisabled>().toggleDisabled(false);
-                  context.read<IntList>().initializeList(9);
-                  context.read<WithComputer>().changeValue(false);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => GameScreen(),
-                    ),
-                  );
-                },
-                child: ListTile(
-                  leading: Icon(
-                    Icons.people_rounded,
-                    color: Colors.grey.shade100,
-                  ),
-                  title: Text(
-                    "Player vs Player",
-                    style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
+                );
+              },
             ),
           ],
         ),
@@ -110,3 +77,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
