@@ -9,28 +9,13 @@ int isGameOver(List<int> intList, int playerMark) {
       return playerMark;
     }
   }
-  // var _computerValues = intList.allIndexWhere((element) => element == 2);
-  // for (Set<int> winningSet in _winningSets) {
-  //   if (_computerValues.containsAll(winningSet)) {
-  //     return 2;
-  //   }
-  // }
+
   var _availableValues = intList.allIndexWhere((element) => element == 0);
   if (_availableValues.isEmpty) {
     return 0;
   }
   return -1;
 }
-
-// int isGameOverComputer(List<int> intList) {
-//   var _computerValues = intList.allIndexWhere((element) => element == 2);
-//   for (Set<int> winningSet in _winningSets) {
-//     if (_computerValues.containsAll(winningSet)) {
-//       return 2;
-//     }
-//   }
-//   return -1;
-// }
 
 Set<Set<int>> _winningSets = {
   {0, 4, 8},
