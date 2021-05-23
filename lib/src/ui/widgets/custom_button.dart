@@ -19,16 +19,39 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         clipBehavior: Clip.antiAlias,
-        child: ListTile(
-          leading: Icon(
-            icon,
-            color: Colors.grey.shade100,
-          ),
-          title: Text(
-            text,
-            style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Container(
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  icon,
+                  color: Colors.grey.shade100,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  text,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500, fontSize: 17),
+                ),
+              ],
+            ),
           ),
         ),
+        // child: ListTile(
+        //   leading: Icon(
+        //     icon,
+        //     color: Colors.grey.shade100,
+        //   ),
+        //   title: Text(
+        //     text,
+        //     style: TextStyle(color: Colors.grey.shade100, fontWeight: FontWeight.w500),
+        //   ),
+        // ),
       ),
     );
   }

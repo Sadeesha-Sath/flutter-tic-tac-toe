@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 const kCircleIcon_9 = Icon(
   CupertinoIcons.circle,
-  size: 80,
+  size: 82,
 );
 
 const kCrossIcon_9 = Icon(
-  Icons.close,
+  Icons.close_rounded,
   size: 90,
 );

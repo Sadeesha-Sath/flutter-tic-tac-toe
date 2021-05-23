@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tic_tac_toe/src/providers/int_list.dart';
 import 'package:tic_tac_toe/src/providers/is_disabled.dart';
+import 'package:tic_tac_toe/src/providers/player_mark.dart';
 import 'package:tic_tac_toe/src/providers/with_computer.dart';
 import 'package:tic_tac_toe/src/ui/widgets/playing_tile.dart';
 
@@ -34,6 +35,8 @@ class GameScreenContent extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
+              color: Theme.of(context).brightness == Brightness.dark ? Color(0xFFDDDDDD) : Colors.black,
+              borderRadius: BorderRadius.circular(20),
               border: Border.all(
                   width: 5, color: Theme.of(context).brightness == Brightness.dark ? Color(0xFFDDDDDD) : Colors.black),
             ),
@@ -50,10 +53,12 @@ class GameScreenContent extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyle(
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
               padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 10, horizontal: 20)),
             ),
             onPressed: () {
               context.read<IsDisabled>().toggleDisabled(false);
+              context.read<PlayerMark>().changePlayer(1);
               context.read<IntList>().resetList();
             },
             child: Text(
